@@ -52,7 +52,7 @@ function buildNavbar() {
 // build the nav
 buildNavbar();
 // Add class 'active' to section when near top of viewport
-Sections1.classList.remove("Nav_class");
+Sections.classList.remove("Nav_class");
 
 const options = {
   root: null,
