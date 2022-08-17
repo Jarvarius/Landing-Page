@@ -25,21 +25,21 @@
 
 const navBarList = document.getElementById("navbar__list");
 //Variables
-const Sections = document.querySelectorAll("Section");
+const sections = document.querySelectorAll("section");
 /**
  * End Global Variables
  * Start Helper Functions
  *
  */
 function buildNavbar() {
-  let B = "";
+  let s = "";
 
   // loop that returns variable
 
   for (let i = 1; i <= 4; i++) {
-    B += "<ui classmenu=menu_link><a>Section</a>" + i + "</ul>";
+    s += "<ui classmenu=menu__link><a>section</a>" + i + "</ul>";
 
-    navBarList.innerHTML = B
+    navBarList.innerHTML = s;
   }
 }
 
@@ -52,7 +52,7 @@ function buildNavbar() {
 // build the nav
 buildNavbar();
 // Add class 'active' to section when near top of viewport
-Sections.classList.remove("Nav_class");
+sections.classList.remove("Nav_class")
 
 const options = {
   root: null,
@@ -60,18 +60,20 @@ const options = {
   margin: "-10px",
 };
 
-const obs = new IntersectionObserver (function(Ent,obs) {
-Ent.forEach(entry => {
-    entry.target.classList.toggle("Nav_class")//style
- })    
-},options);
+const observer = new IntersectionObserver(function (Enteries, observer) {
+  Enteries.forEach((entry) => {
+    entry.target.classList.toggle("Nav_class"); //style
+  });
+}, options);
+
+sections.forEach((sec) => {
+  observer.observe(sec);
+});
 
 // Scroll to anchor ID using scrollTO event
-const links = document.querySelectorAll("a")
-for (let i = 0; i < links.length; i++) {
-
-	links[i].setAttribute("nav", "section" + i)
-
+const links = document.querySelectorAll("a");
+for (let i = 0; i < 1; i++) {
+  links[i].setAttribute("nav", "section" + i);
 }
 /**
  * End Main Functions
@@ -81,12 +83,11 @@ for (let i = 0; i < links.length; i++) {
 
 // Build menu
 links.forEach((link) => {
-	link.addEventListener("click", () => {
-		let l = document.getElementById(link.getAttribute("nav"))
-		l.scrollIntoView({ behavior: "smooth" })
-	})
-
-})
+  link.addEventListener("click", () => {
+    let l = document.getElementById(link.getAttribute("nav"));
+    l.scrollIntoView({ behavior: "smooth" });
+  });
+});
 
 // Scroll to section on link click
 
