@@ -22,7 +22,7 @@
  * Define Global Variables
  * 
 */
-const menu = document.querySelector('.navbar__menu');
+const menu = document.querySelector('navbar__menu');
 const nav = document.querySelector('#navbar__list');
 
   const sections = document.querySelectorAll('section');
