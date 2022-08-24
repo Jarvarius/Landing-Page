@@ -23,7 +23,7 @@
  * 
 */
 const menu = document.querySelector('#navbar__menu');
-const nav = document.querySelector('.navbar__list');
+const nav = document.querySelector('#navbar__list');
 
   const sections = document.querySelectorAll('section');
 /**
@@ -44,15 +44,15 @@ function buildnav() {
 
   for(let i = 0; i < sections.length; i++){
     const Listitems = document.createElement('li');
-    Listitems.innerText = sections.innerText;
+    Listitems.innerText = sections[i].id;
     Listitems.addEventListener('click',function(){
-      sections.scrollIntoView();
+      sections[i].scrollIntoView();
     });
     nav.appendChild(Listitems);
   }
   
 }
-
+buildnav()
   
 // Add class 'active' to section when near top of viewport
 
