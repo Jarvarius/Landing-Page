@@ -25,7 +25,7 @@
 const menu = document.querySelector('#navbar__menu');
 const nav = document.querySelector('.navbar__list');
 
-  const section = document.getElementById('section');
+  const sections = document.querySelectorAll('section');
 /**
  * End Global Variables
  * Start Helper Functions
@@ -42,16 +42,13 @@ const nav = document.querySelector('.navbar__list');
 function buildnav() {
   
 
-  for(let i = 0; i < section.length; i++){
+  for(let i = 0; i < sections.length; i++){
     const Listitems = document.createElement('li');
-    Listitems.innerText = section.innerText;
-    const anchor = document.createAttribute('a');
-    const sectionA = section[i].getAttribute('data-nav');
-    const sectionAttribute = sectionA.replace(/\s/g, '').toLowerCase();
-
-    anchor.innertext = sectionA;
-    anchor.sectionAttribute('href')
-    
+    Listitems.innerText = sections.innerText;
+    Listitems.addEventListener('click',function(){
+      sections.scrollIntoView();
+    });
+    nav.appendChild(Listitems);
   }
   
 }
@@ -59,9 +56,25 @@ function buildnav() {
   
 // Add class 'active' to section when near top of viewport
 
-
 // Scroll to anchor ID using scrollTO event
+window.addEventListener('scroll',function(){
+sections.foreach(function(menu){
+  const link = sections.getBoundingClientRect();
+  const isInViewport = link.top > 0 && link.top < window.innerHeight;
 
+  if (isInViewport) {
+    sections.classList.add('active-section');
+    
+    
+    const nav = document.querySelectorAll('#navbar__menu li');
+    nav.forEach(function(listItem) {
+      
+    });
+  } else {
+    sections.classList.remove('active-section');
+  }
+});
+})
 
 /**
  * End Main Functions

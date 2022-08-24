@@ -93,9 +93,7 @@ section {
     background-color: rgba(37, 97, 97, 0.788);
 }
 
-.navbar__menu li {
-    display: inline-block;
-}
+
 
 .navbar__menu .menu__link {
     display: inline-block;
