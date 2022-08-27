@@ -58,7 +58,7 @@ buildnav()
 
 // Scroll to anchor ID using scrollTO event
 window.addEventListener('scroll',function(){
-sections.foreach(function(sections){
+sections.forEach(function(sections){
   const link = sections.getBoundingClientRect();
   const isInViewport = link.top > 0 && link.top < window.innerHeight;
 
