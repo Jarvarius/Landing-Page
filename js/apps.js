@@ -23,7 +23,7 @@
  * 
 */
 const menu = document.querySelector('navbar__menu');
-const nav = document.getElementById('#navbar__list');
+const nav = document.querySelector('#navbar__list');
 
   const sections = document.querySelectorAll('section');
 /**
@@ -67,7 +67,7 @@ sections.foreach(function(sections){
     
     
     const nav = document.querySelectorAll('#navbar__menu li');
-    nav.forEach(function(listItem) {
+    nav.forEach(function(Listitems) {
       
     });
   } else {
