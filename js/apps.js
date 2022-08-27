@@ -23,7 +23,7 @@
  * 
 */
 const menu = document.querySelector('navbar__menu');
-const nav = document.querySelector('#navbar__list');
+const nav = document.getElementById('#navbar__list');
 
   const sections = document.querySelectorAll('section');
 /**
@@ -58,7 +58,7 @@ buildnav()
 
 // Scroll to anchor ID using scrollTO event
 window.addEventListener('scroll',function(){
-sections.foreach(function(menu){
+sections.foreach(function(sections){
   const link = sections.getBoundingClientRect();
   const isInViewport = link.top > 0 && link.top < window.innerHeight;
 
