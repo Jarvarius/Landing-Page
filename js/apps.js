@@ -43,11 +43,9 @@ function buildnav() {
     const Listitems = document.createElement("li");
     Listitems.innerText = sections[i].id;
     Listitems.addEventListener("click", function () {
-      sections[i].scrollIntoView();
-      behavior: 'smooth'
+      sections[i].scrollIntoView({ behavior: "smooth" });
     });
     nav.appendChild(Listitems);
-    preventDefault();
   }
 }
 buildnav();
@@ -64,6 +62,7 @@ window.addEventListener("scroll", function () {
       nav.forEach(function (Listitems) {});
     } else {
       sections.classList.remove("active-section");
+      preventDefault();
     }
   });
 });
