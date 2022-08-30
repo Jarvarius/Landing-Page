@@ -44,8 +44,10 @@ function buildnav() {
     Listitems.innerText = sections[i].id;
     Listitems.addEventListener("click", function () {
       sections[i].scrollIntoView();
+      behavior: 'smooth'
     });
     nav.appendChild(Listitems);
+    preventDefault();
   }
 }
 buildnav();
@@ -77,7 +79,6 @@ window.addEventListener("scroll", function () {
 // Scroll to section on link click
 const scrollUp = document.querySelector("#scroll-up");
 scrollUp.addEventListener("click", () => {
-  preventDefault();
   window.scrollTo({
     top: 0,
     left: 0,
