@@ -62,11 +62,19 @@ window.addEventListener("scroll", function () {
       nav.forEach(function (Listitems) {});
     } else {
       sections.classList.remove("active-section");
-      preventDefault();
     }
   });
 });
-
+const smoothScroll = () => {
+  document.querySelectorAll(".menu__link").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute("href"))({
+        behavior: "smooth",
+      });
+    });
+  });
+};
 /**
  * End Main Functions
  * Begin Events
@@ -76,13 +84,4 @@ window.addEventListener("scroll", function () {
 // Build menu
 
 // Scroll to section on link click
-const scrollUp = document.querySelector("#scroll-up");
-scrollUp.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-});
-
 // Set sections as active
